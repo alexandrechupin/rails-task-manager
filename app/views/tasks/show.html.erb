@@ -1,0 +1,11 @@
+
+<h2> <%= @task.title %> </h2>
+<ul>
+  <li><%= @task.details %> </li>
+  <li><%= @task.completed == true ? "✅ this task is completed" : "❌ this task is not completed" %> </li>
+</ul>
+
+<%= link_to "All tasks", '/tasks' %>
+
+
+<p><%= link_to "Edit task", edit_path %></p>

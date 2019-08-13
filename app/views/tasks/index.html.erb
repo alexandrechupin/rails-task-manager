@@ -1,0 +1,22 @@
+
+<div class="ml-5 mt-5">
+<h1>All my tasks</h1>
+
+<div class="mb-10">
+  <ul class="mt-4"> The current tasks
+  <% @tasks.each do |element| %>
+    <li class="mb-4"> <%= element.completed == true ? "✅" : "❌" %>
+     <%= link_to element.title, task_path(element) %>
+    <%= element.details %>
+    <%= link_to "Delete", delete_task_path(element),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+  </li>
+  <% end %>
+  </ul>
+</div>
+<p class="mt-10"><%= link_to "New task", ntask_path %></p>
+</div>
+
+
+
